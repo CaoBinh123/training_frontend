@@ -1,0 +1,57 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-text;
+}
+
+@mixin a($font, $color, $color_hover) {
+    font-size: $font;
+    $color: $color;
+    &:hover {
+        color: $color_hover;
+        text-decoration: none;
+    }
+}
+
+@mixin position($position, $top, $left, $z-index, $font) {
+    position: $position;
+    top: $top;
+    left: $left;
+    z-index: $z-index;
+    font-size: $font;
+}
+
+@mixin line_height($width, $height) {
+    width: $width;
+    height: $height;
+    line-height: $height;
+}
+
+//header_top
+.header_top {
+    @include line_height(100%, 45px);
+    background-color: #222222;
+    p {
+        display: inline;
+        color: $text-color;
+        font-weight: 500;
+    }
+    &_left {
+        float: left;
+    }
+    &_right {
+        float: right;
+        a,
+        i {
+            color: $text-color;
+            font-weight: 500;
+        }
+        a:nth-child(1) {
+            margin-right: 30px;
+        }
+    }
+}
+
+//header_bottom
+.header_bottom {}
